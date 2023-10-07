@@ -1,14 +1,22 @@
 pipeline {
     agent any
-     stages {
+    stages {
         stage('build') {
             steps {
-                echo "building"
-           
-           }
-        
+                echo 'this is sattar'
+            }
         }
      
-     }
-
+        stage('accept') {
+            steps {
+                echo "Hi Good Morning"
+            }
+        }
+        
+        stage('deploy') {
+            steps {
+                echo "hello sattar"
+            }
+        }
+    }
 }
