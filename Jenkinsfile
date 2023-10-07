@@ -1,43 +1,68 @@
-pipeline {
-    agent any
+Pipeline {
+    agent { node { label 'Agent' } }
     stages {
-        stage('build') {
-            steps {
-                echo 'this is sattar'
-              sh '''
-                ls -latr
-                pwd
-                sudo yum install nodejs -y
-              '''
-            }
-        }
-     
-        stage('accept') {
-            steps {
-                echo "Hi Good Morning"
+       stage('build) {
+          steps {
               sh '''
                 pwd
-                sudo  yum update -y
+                yum update
               '''
-            }
-        }
-        
-        stage('deploy') {
-            steps {
-                echo "hello sattar"
-            }
-        }
-    }
-    post {
-       always {
-            echo "script is successful"
+          }
+       
+       }
+       stage('install') {
+          steps {
+          
+             sh '''
+              ls -latr
+              pwd
+              sudo wget "https://releases.hashicorp.com/terraform/1.3.5/terraform_1.3.5_linux_amd64.zip"
+              echo $PATH
+              sudo unzip terraform_1.3.5_linux_amd64.zip -d /usr/local/bin
+            '''
+          }
+       
+       }
+
+       stage('init') {
+           steps {
+              sh '''
+                ls -l /usr/local/bin
+                sudo yum install -y yum-utils
+                sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
+                sudo yum -y install terraform
+              '''
+           }
+       }
+
+       stage('deploy'){
+           steps{
+               echo 'terroform init'
+           }
+       }
+       post {
+          always {
+               echo "successful"
+          }
+          success{
+               echo "success"
+          }
+          failure {
+              echo "failure"
+          }
+       
        }
     
-       success {
-             echo "always success"
-       }    
-       failure {
-             echo "failure"
-       }
     }
+
 }
+
+
+
+
+
+
+
+
+
+
