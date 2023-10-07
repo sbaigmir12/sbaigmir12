@@ -17,9 +17,8 @@ pipeline {
                 echo "Hi Good Morning"
               sh '''
                 pwd
-                yum update
-               '''
-
+                sudo  yum update -y
+              '''
             }
         }
         
