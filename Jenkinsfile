@@ -8,7 +8,7 @@ pipeline {
                 ls -latr
                 pwd
                yum install nodejs -y
-               '''
+              '''
             }
         }
      
@@ -18,7 +18,7 @@ pipeline {
               sh '''
                 pwd
                 yum update
-                 '''
+              '''
 
             }
         }
