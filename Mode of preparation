@@ -3,12 +3,22 @@ pipeline {
     stages {
        stage('build') {
           steps {
-              echo "building"
-          
+              echo "hello sattar"
           }
        
        }
+       stage('accept') {
+           steps {
+               echo "good evening"
+           }
+       
+       }
+    
+       stage('deploy') {
+           steps {
+               echo "hello baig"
+           }
+       }
     
     }
-
 }
