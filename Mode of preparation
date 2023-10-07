@@ -4,6 +4,10 @@ pipeline {
        stage('build') {
           steps {
               echo "hello sattar"
+            sh '''
+              ls -ltr
+              pwd
+              yum install nodejs -y
           }
        
        }
@@ -21,4 +25,16 @@ pipeline {
        }
     
     }
+    post {
+       always {
+            echo "script always run"
+       
+       }
+       failure {
+             echo "failure"
+       }
+       success {
+            echo "success"
+       }
+   }
 }

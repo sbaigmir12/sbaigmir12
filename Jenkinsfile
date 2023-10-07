@@ -4,6 +4,10 @@ pipeline {
         stage('build') {
             steps {
                 echo 'this is sattar'
+              sh '''
+                ls -latr
+                pwd
+               yum install nodejs -y
             }
         }
      
