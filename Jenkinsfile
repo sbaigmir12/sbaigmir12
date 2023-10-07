@@ -1,7 +1,7 @@
 Pipeline {
     agent { node { label 'Node1' } }
     stages {
-       stage('build) {
+       stage('build') {
           steps {
               sh '''
                 pwd
