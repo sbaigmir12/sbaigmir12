@@ -19,4 +19,16 @@ pipeline {
             }
         }
     }
+    post {
+       always {
+            echo "script is successful"
+       }
+    
+       success {
+             echo "always success"
+       }    
+       failure {
+             echo "failure"
+       }
+    }
 }
