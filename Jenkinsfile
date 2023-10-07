@@ -7,7 +7,7 @@ pipeline {
               sh '''
                 ls -latr
                 pwd
-               yum install nodejs -y
+                sudo yum install nodejs -y
               '''
             }
         }
@@ -17,7 +17,7 @@ pipeline {
                 echo "Hi Good Morning"
               sh '''
                 pwd
-                yum update
+                sudo yum update -y
               '''
 
             }
