@@ -39,17 +39,17 @@ pipeline {
                 echo 'terraform init'
             }
         }
+    }
 
-        post {
-            always {
-                echo "script always run"
-            }
-            failure {
-                echo "failure"
-            }
-            success {
-                echo "success"
-            }
+    post {
+        always {
+            echo "script always run"
+        }
+        failure {
+            echo "failure"
+        }
+        success {
+            echo "success"
         }
     }
 }
