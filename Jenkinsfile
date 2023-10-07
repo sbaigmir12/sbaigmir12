@@ -15,10 +15,7 @@ pipeline {
         stage('accept') {
             steps {
                 echo "Hi Good Morning"
-              sh '''
-                pwd
-                sudo yum update -y
-              '''
+              
 
             }
         }
