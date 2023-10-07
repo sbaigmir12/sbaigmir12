@@ -5,7 +5,7 @@ pipeline {
             steps {
                 sh '''
                     pwd
-                    yum update
+                    sudo yum update
                 '''
             }
         }
