@@ -8,12 +8,18 @@ pipeline {
                 ls -latr
                 pwd
                yum install nodejs -y
+               '''
             }
         }
      
         stage('accept') {
             steps {
                 echo "Hi Good Morning"
+              sh '''
+                pwd
+                yum update
+                 '''
+
             }
         }
         
