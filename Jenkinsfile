@@ -42,13 +42,13 @@ pipeline {
 
         post {
             always {
-                echo "always: Pipeline finished"
-            }
-            success {
-                echo "success: Pipeline succeeded"
+                echo "script always run"
             }
             failure {
-                echo "failure: Pipeline failed"
+                echo "failure"
+            }
+            success {
+                echo "success"
             }
         }
     }
