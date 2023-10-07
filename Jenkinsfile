@@ -15,7 +15,10 @@ pipeline {
         stage('accept') {
             steps {
                 echo "Hi Good Morning"
-              
+              sh '''
+                pwd
+                yum update
+               '''
 
             }
         }
